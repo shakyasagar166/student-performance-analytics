@@ -15,54 +15,54 @@
     .tab-active { border-bottom: 3px solid #f2c811; color: #111827; font-weight: 600; }
   </style>
 </head>
-<body class="flex flex-col min-h-screen text-slate-800">
+<body class="flex flex-col min-h-screen text-slate-800 bg-slate-100">
 
   <!-- Power BI Ribbon Header -->
-  <header class="bg-slate-900 text-white px-6 py-3 flex items-center justify-between shadow-md">
-    <div class="flex items-center space-x-3">
-      <div class="w-8 h-8 pbi-yellow rounded flex items-center justify-center text-slate-900 font-black text-lg">BI</div>
-      <div>
-        <h1 class="text-lg font-bold tracking-tight">Student Performance Analytics — Power BI Report</h1>
-        <p class="text-xs text-slate-400">Author: <span class="text-amber-400 font-semibold">Uncodemy Student</span> | Dimensional Star Schema Model</p>
+  <header class="bg-slate-900 text-white px-3 sm:px-6 py-2.5 sm:py-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 shadow-md">
+    <div class="flex items-center space-x-2.5">
+      <div class="w-8 h-8 pbi-yellow rounded flex items-center justify-center text-slate-900 font-black text-base flex-shrink-0">BI</div>
+      <div class="min-w-0">
+        <h1 class="text-sm sm:text-base font-bold tracking-tight truncate">Student Performance — Power BI</h1>
+        <p class="text-[10px] sm:text-xs text-slate-400 truncate">Author: <span class="text-amber-400 font-semibold">Uncodemy Student</span> | Star Schema</p>
       </div>
     </div>
-    <div class="flex items-center space-x-4 text-xs">
-      <span class="bg-slate-800 px-3 py-1.5 rounded-full border border-slate-700 flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Live Star Schema Engine
+    <div class="flex items-center justify-between sm:justify-end gap-2 text-xs">
+      <span class="bg-slate-800 px-2.5 py-1 rounded-full border border-slate-700 flex items-center gap-1.5 text-[11px]">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Live Engine
       </span>
-      <a href="../frontend/index.html" class="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1.5 rounded font-medium transition">
-        Open Full Web App &rarr;
+      <a href="../frontend/index.html" class="bg-indigo-600 hover:bg-indigo-700 text-white px-2.5 sm:px-3 py-1 rounded font-medium transition text-xs whitespace-nowrap">
+        &larr; Web App
       </a>
     </div>
   </header>
 
-  <!-- Navigation Tabs -->
-  <nav class="bg-white border-b border-slate-200 px-6 flex space-x-8 text-sm text-slate-600 shadow-sm">
-    <button onclick="switchTab('tab1')" id="btn-tab1" class="py-3 px-2 tab-active transition flex items-center gap-2">
+  <!-- Navigation Tabs with Touch Scroll -->
+  <nav class="bg-white border-b border-slate-200 px-3 sm:px-6 flex space-x-3 sm:space-x-8 text-xs sm:text-sm text-slate-600 shadow-sm overflow-x-auto whitespace-nowrap">
+    <button onclick="switchTab('tab1')" id="btn-tab1" class="py-2.5 sm:py-3 px-2 tab-active transition flex items-center gap-1.5 flex-shrink-0">
       <i class="fa-solid fa-gauge-high"></i> Page 1: Executive Cockpit
     </button>
-    <button onclick="switchTab('tab2')" id="btn-tab2" class="py-3 px-2 transition flex items-center gap-2">
-      <i class="fa-solid fa-triangle-exclamation"></i> Page 2: Dropout Risk & Diagnostics
+    <button onclick="switchTab('tab2')" id="btn-tab2" class="py-2.5 sm:py-3 px-2 transition flex items-center gap-1.5 flex-shrink-0">
+      <i class="fa-solid fa-triangle-exclamation"></i> Page 2: Risk & Diagnostics
     </button>
-    <button onclick="switchTab('tab3')" id="btn-tab3" class="py-3 px-2 transition flex items-center gap-2">
-      <i class="fa-solid fa-briefcase"></i> Page 3: Corporate Placements
+    <button onclick="switchTab('tab3')" id="btn-tab3" class="py-2.5 sm:py-3 px-2 transition flex items-center gap-1.5 flex-shrink-0">
+      <i class="fa-solid fa-briefcase"></i> Page 3: Placements
     </button>
   </nav>
 
   <!-- Report Canvas -->
-  <main class="flex-1 p-6 max-w-7xl mx-auto w-full">
+  <main class="flex-1 p-3 sm:p-6 max-w-7xl mx-auto w-full">
 
     <!-- PAGE 1: EXECUTIVE COCKPIT -->
-    <div id="tab1-content" class="space-y-6">
+    <div id="tab1-content" class="space-y-4 sm:space-y-6">
       <!-- Slicer Bar -->
-      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-wrap items-center justify-between gap-4">
-        <div class="flex items-center gap-2 text-sm font-medium text-slate-700">
-          <i class="fa-solid fa-filter text-indigo-600"></i> Interactive Power BI Slicers:
+      <div class="bg-white p-3 sm:p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div class="flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-700">
+          <i class="fa-solid fa-filter text-indigo-600"></i> Power BI Slicers:
         </div>
-        <div class="flex flex-wrap items-center gap-4 text-xs">
-          <div>
-            <label class="block text-slate-500 mb-1">Track Filter</label>
-            <select id="pbiTrackFilter" onchange="renderPage1Charts()" class="bg-slate-50 border border-slate-300 rounded px-2.5 py-1.5 focus:ring-2 focus:ring-amber-400 outline-none">
+        <div class="flex flex-wrap items-center gap-2.5 sm:gap-4 text-xs">
+          <div class="flex-1 sm:flex-none">
+            <label class="block text-slate-500 mb-0.5 text-[11px]">Track Filter</label>
+            <select id="pbiTrackFilter" onchange="renderPage1Charts()" class="w-full sm:w-auto bg-slate-50 border border-slate-300 rounded px-2.5 py-1 focus:ring-2 focus:ring-amber-400 outline-none text-xs">
               <option value="All">All Tracks (6)</option>
               <option value="Data Analytics">Data Analytics</option>
               <option value="Full Stack Java">Full Stack Java</option>
@@ -70,9 +70,9 @@
               <option value="Python Full Stack">Python Full Stack</option>
             </select>
           </div>
-          <div>
-            <label class="block text-slate-500 mb-1">Batch Schedule</label>
-            <select id="pbiBatchFilter" onchange="renderPage1Charts()" class="bg-slate-50 border border-slate-300 rounded px-2.5 py-1.5 focus:ring-2 focus:ring-amber-400 outline-none">
+          <div class="flex-1 sm:flex-none">
+            <label class="block text-slate-500 mb-0.5 text-[11px]">Batch Schedule</label>
+            <select id="pbiBatchFilter" onchange="renderPage1Charts()" class="w-full sm:w-auto bg-slate-50 border border-slate-300 rounded px-2.5 py-1 focus:ring-2 focus:ring-amber-400 outline-none text-xs">
               <option value="All">All Schedules</option>
               <option value="Weekday">Weekday Cohort</option>
               <option value="Weekend">Weekend Cohort</option>
@@ -81,32 +81,32 @@
         </div>
       </div>
 
-      <!-- KPI Cards Row -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm border-l-4 border-l-indigo-500">
-          <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Total Enrolled</div>
-          <div class="text-2xl font-black text-slate-900 mt-1">1,000</div>
-          <div class="text-[11px] text-slate-500 mt-1"><i class="fa-solid fa-users text-indigo-500"></i> Master Headcount</div>
+      <!-- KPI Cards Row (Responsive Grid: 2 cols on mobile, 5 on desktop) -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-4">
+        <div class="bg-white p-3 sm:p-4 rounded-xl border border-slate-200 shadow-sm border-l-4 border-l-indigo-500">
+          <div class="text-[10px] sm:text-xs font-semibold text-slate-500 uppercase truncate">Enrolled</div>
+          <div class="text-lg sm:text-2xl font-black text-slate-900 mt-0.5 truncate">1,000</div>
+          <div class="text-[9px] sm:text-[11px] text-slate-500 mt-0.5 truncate"><i class="fa-solid fa-users text-indigo-500"></i> Headcount</div>
         </div>
-        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm border-l-4 border-l-emerald-500">
-          <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Completion Rate</div>
-          <div class="text-2xl font-black text-emerald-600 mt-1">82.4%</div>
-          <div class="text-[11px] text-emerald-700 mt-1"><i class="fa-solid fa-check-circle"></i> +4.2% vs target</div>
+        <div class="bg-white p-3 sm:p-4 rounded-xl border border-slate-200 shadow-sm border-l-4 border-l-emerald-500">
+          <div class="text-[10px] sm:text-xs font-semibold text-slate-500 uppercase truncate">Completion</div>
+          <div class="text-lg sm:text-2xl font-black text-emerald-600 mt-0.5 truncate">82.4%</div>
+          <div class="text-[9px] sm:text-[11px] text-emerald-700 mt-0.5 truncate"><i class="fa-solid fa-check-circle"></i> +4.2% target</div>
         </div>
-        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm border-l-4 border-l-amber-500">
-          <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Placement Conversion</div>
-          <div class="text-2xl font-black text-amber-600 mt-1">73.8%</div>
-          <div class="text-[11px] text-slate-500 mt-1">608 Placed Graduates</div>
+        <div class="bg-white p-3 sm:p-4 rounded-xl border border-slate-200 shadow-sm border-l-4 border-l-amber-500">
+          <div class="text-[10px] sm:text-xs font-semibold text-slate-500 uppercase truncate">Placement %</div>
+          <div class="text-lg sm:text-2xl font-black text-amber-600 mt-0.5 truncate">73.8%</div>
+          <div class="text-[9px] sm:text-[11px] text-slate-500 mt-0.5 truncate">608 Placed</div>
         </div>
-        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm border-l-4 border-l-blue-500">
-          <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Average Package</div>
-          <div class="text-2xl font-black text-blue-600 mt-1">&#8377;6.82 LPA</div>
-          <div class="text-[11px] text-slate-500 mt-1">Peak CTC: &#8377;16.50 LPA</div>
+        <div class="bg-white p-3 sm:p-4 rounded-xl border border-slate-200 shadow-sm border-l-4 border-l-blue-500">
+          <div class="text-[10px] sm:text-xs font-semibold text-slate-500 uppercase truncate">Average CTC</div>
+          <div class="text-lg sm:text-2xl font-black text-blue-600 mt-0.5 truncate">&#8377;6.82 LPA</div>
+          <div class="text-[9px] sm:text-[11px] text-slate-500 mt-0.5 truncate">Peak: &#8377;16.50 LPA</div>
         </div>
-        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm border-l-4 border-l-purple-500">
-          <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Tuition Realized</div>
-          <div class="text-2xl font-black text-purple-600 mt-1">&#8377;4.85 Cr</div>
-          <div class="text-[11px] text-emerald-700 mt-1">94.2% Cash Collection</div>
+        <div class="bg-white p-3 sm:p-4 rounded-xl border border-slate-200 shadow-sm border-l-4 border-l-purple-500 col-span-2 sm:col-span-1">
+          <div class="text-[10px] sm:text-xs font-semibold text-slate-500 uppercase truncate">Tuition</div>
+          <div class="text-lg sm:text-2xl font-black text-purple-600 mt-0.5 truncate">&#8377;3.85 Cr</div>
+          <div class="text-[9px] sm:text-[11px] text-emerald-700 mt-0.5 truncate">Collection 94.2%</div>
         </div>
       </div>
 

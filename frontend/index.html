@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Student Performance Analytics | Uncodemy Student</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -10,181 +10,187 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Custom CSS -->
+  <!-- Custom Responsive CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col font-sans">
 
-  <!-- TOP NAVBAR -->
+  <!-- TOP RESPONSIVE NAVBAR -->
   <nav class="navbar">
-    <div class="flex items-center space-x-3">
-      <div class="w-9 h-9 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-black text-lg shadow-sm">
+    <!-- Brand / Title Section -->
+    <div class="brand-section flex items-center space-x-2.5">
+      <div class="w-8 h-8 sm:w-9 sm:h-9 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-black text-base sm:text-lg shadow-sm flex-shrink-0">
         <i class="fa-solid fa-graduation-cap"></i>
       </div>
-      <div>
-        <div class="flex items-center space-x-2">
-          <span class="font-extrabold text-base tracking-tight text-white">Student Performance Analytics</span>
+      <div class="min-w-0">
+        <div class="flex items-center gap-1.5 flex-wrap">
+          <span class="font-extrabold text-sm sm:text-base tracking-tight text-white truncate">Student Performance Analytics</span>
           <span class="brand-badge"><i class="fa-solid fa-shield-halved"></i> Uncodemy Student</span>
         </div>
-        <p class="text-[11px] text-slate-400">Business Analyst Portfolio | Full-Stack Connected Platform</p>
+        <p class="text-[10px] sm:text-[11px] text-slate-400 truncate">Business Analyst Portfolio | Full-Stack Platform</p>
       </div>
     </div>
 
-    <!-- Navigation & Quick Actions -->
-    <div class="flex items-center space-x-3 text-xs">
-      <div id="backendStatusBadge" class="bg-slate-800/80 text-emerald-400 border border-emerald-500/30 px-3 py-1.5 rounded-full flex items-center gap-2">
+    <!-- Actions & Status Section (Wraps nicely on mobile) -->
+    <div class="actions-section flex items-center flex-wrap gap-2 text-[11px] sm:text-xs">
+      <div id="backendStatusBadge" class="bg-slate-800/90 text-emerald-400 border border-emerald-500/30 px-2.5 py-1 sm:py-1.5 rounded-full flex items-center gap-1.5 flex-shrink-0">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span id="backendStatusText">Connecting Backend...</span>
+        <span id="backendStatusText" class="truncate max-w-[150px] sm:max-w-none">Connecting...</span>
       </div>
-      <a href="../power_bi/interactive_bi_preview.html" target="_blank" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition shadow-sm">
-        <i class="fa-solid fa-chart-pie"></i> Power BI Report
-      </a>
-      <a href="/api/download-excel" download class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition shadow-sm">
-        <i class="fa-solid fa-file-excel"></i> Download Excel Model
-      </a>
+      <div class="flex items-center gap-1.5 flex-wrap">
+        <a href="../power_bi/interactive_bi_preview.html" target="_blank" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg flex items-center gap-1 transition shadow-sm whitespace-nowrap">
+          <i class="fa-solid fa-chart-pie"></i> <span class="hidden xs:inline">Power BI</span> Preview
+        </a>
+        <a href="/api/download-excel" download class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg flex items-center gap-1 transition shadow-sm whitespace-nowrap">
+          <i class="fa-solid fa-file-excel"></i> <span class="hidden xs:inline">Excel</span> Model
+        </a>
+      </div>
     </div>
   </nav>
 
   <!-- SUB-HEADER ALERT / BANNER -->
-  <div class="bg-indigo-900 text-indigo-100 px-6 py-2.5 text-xs flex flex-wrap items-center justify-between border-b border-indigo-800">
-    <div class="flex items-center gap-2">
-      <span class="bg-indigo-700 text-indigo-200 px-2 py-0.5 rounded font-mono font-bold">PORTFOLIO PROJECT</span>
-      <span>Engineered by <strong>Uncodemy Student</strong> | Demonstrating MySQL 8.0, Advanced Excel Modeling, Power BI Star Schema & Full-Stack Python Backend</span>
+  <div class="bg-indigo-900 text-indigo-100 px-3 sm:px-6 py-2 text-[11px] sm:text-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-1.5 border-b border-indigo-800">
+    <div class="flex items-center gap-1.5 flex-wrap">
+      <span class="bg-indigo-700 text-indigo-200 px-1.5 py-0.5 rounded font-mono font-bold text-[10px]">PORTFOLIO</span>
+      <span>Created by <strong>Uncodemy Student</strong> | MySQL 8.0, Excel 365, Power BI & Python REST API</span>
     </div>
-    <div class="flex items-center gap-4 text-[11px] text-indigo-300">
-      <span><i class="fa-solid fa-database text-emerald-400"></i> SQLite / MySQL 3NF</span>
-      <span><i class="fa-solid fa-server text-cyan-400"></i> Python REST API</span>
-      <span><i class="fa-brands fa-github text-white"></i> Ready for GitHub Push</span>
+    <div class="flex items-center gap-3 text-[10px] sm:text-[11px] text-indigo-300 flex-wrap">
+      <span><i class="fa-solid fa-database text-emerald-400"></i> SQLite / MySQL</span>
+      <span><i class="fa-solid fa-server text-cyan-400"></i> Python REST</span>
+      <span><i class="fa-solid fa-mobile-screen text-amber-400"></i> Mobile Ready</span>
     </div>
   </div>
 
   <!-- MAIN CONTAINER -->
-  <main class="flex-1 max-w-7xl mx-auto w-full p-6 space-y-6">
+  <main class="flex-1 max-w-7xl mx-auto w-full p-3 sm:p-6 space-y-4 sm:space-y-6">
 
-    <!-- KPI SUMMARY COCKPIT -->
+    <!-- KPI SUMMARY COCKPIT (Responsive Grid: 2 cols on mobile, 3 on tablet, 6 on desktop) -->
     <section>
-      <div class="flex items-center justify-between mb-3">
-        <h2 class="text-sm font-bold text-slate-700 uppercase tracking-wider flex items-center gap-2">
-          <i class="fa-solid fa-gauge text-indigo-600"></i> Executive Performance Cockpit (Real-time DB Feed)
+      <div class="flex items-center justify-between mb-2 sm:mb-3">
+        <h2 class="text-xs sm:text-sm font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
+          <i class="fa-solid fa-gauge text-indigo-600"></i> Performance Cockpit
         </h2>
-        <span class="text-xs text-slate-500" id="lastUpdatedTime">Updated: Just now</span>
+        <span class="text-[10px] sm:text-xs text-slate-500" id="lastUpdatedTime">Live Synced</span>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-4">
         <!-- KPI 1 -->
         <div class="kpi-card">
           <div class="kpi-stripe bg-indigo-600"></div>
-          <p class="text-xs font-semibold text-slate-500 uppercase">Enrolled Students</p>
-          <h3 class="text-2xl font-black text-slate-900 mt-1" id="kpiTotalStudents">1,000</h3>
-          <p class="text-[11px] text-indigo-600 font-medium mt-1"><i class="fa-solid fa-users"></i> 6 Course Tracks</p>
+          <p class="text-[10px] sm:text-xs font-semibold text-slate-500 uppercase truncate">Enrolled</p>
+          <h3 class="text-lg sm:text-2xl font-black text-slate-900 mt-0.5 sm:mt-1 truncate" id="kpiTotalStudents">1,000</h3>
+          <p class="text-[9px] sm:text-[11px] text-indigo-600 font-medium mt-0.5 truncate"><i class="fa-solid fa-users"></i> 6 Tracks</p>
         </div>
 
         <!-- KPI 2 -->
         <div class="kpi-card">
           <div class="kpi-stripe bg-emerald-500"></div>
-          <p class="text-xs font-semibold text-slate-500 uppercase">Completion Rate</p>
-          <h3 class="text-2xl font-black text-emerald-600 mt-1" id="kpiCompletionRate">82.4%</h3>
-          <p class="text-[11px] text-slate-500 mt-1"><span id="kpiGraduatedCount">824</span> Graduated</p>
+          <p class="text-[10px] sm:text-xs font-semibold text-slate-500 uppercase truncate">Completion %</p>
+          <h3 class="text-lg sm:text-2xl font-black text-emerald-600 mt-0.5 sm:mt-1 truncate" id="kpiCompletionRate">82.4%</h3>
+          <p class="text-[9px] sm:text-[11px] text-slate-500 mt-0.5 truncate"><span id="kpiGraduatedCount">824</span> Graduated</p>
         </div>
 
         <!-- KPI 3 -->
         <div class="kpi-card">
           <div class="kpi-stripe bg-amber-500"></div>
-          <p class="text-xs font-semibold text-slate-500 uppercase">Placement Rate</p>
-          <h3 class="text-2xl font-black text-amber-600 mt-1" id="kpiPlacementRate">73.8%</h3>
-          <p class="text-[11px] text-slate-500 mt-1"><span id="kpiPlacedCount">608</span> Offers Accepted</p>
+          <p class="text-[10px] sm:text-xs font-semibold text-slate-500 uppercase truncate">Placed %</p>
+          <h3 class="text-lg sm:text-2xl font-black text-amber-600 mt-0.5 sm:mt-1 truncate" id="kpiPlacementRate">73.8%</h3>
+          <p class="text-[9px] sm:text-[11px] text-slate-500 mt-0.5 truncate"><span id="kpiPlacedCount">608</span> Placed</p>
         </div>
 
         <!-- KPI 4 -->
         <div class="kpi-card">
           <div class="kpi-stripe bg-blue-500"></div>
-          <p class="text-xs font-semibold text-slate-500 uppercase">Average Package</p>
-          <h3 class="text-2xl font-black text-blue-600 mt-1" id="kpiAvgPackage">&#8377;6.82 LPA</h3>
-          <p class="text-[11px] text-slate-500 mt-1">Across all hiring partners</p>
+          <p class="text-[10px] sm:text-xs font-semibold text-slate-500 uppercase truncate">Avg Package</p>
+          <h3 class="text-lg sm:text-2xl font-black text-blue-600 mt-0.5 sm:mt-1 truncate" id="kpiAvgPackage">&#8377;6.82 LPA</h3>
+          <p class="text-[9px] sm:text-[11px] text-slate-500 mt-0.5 truncate">Across all partners</p>
         </div>
 
         <!-- KPI 5 -->
         <div class="kpi-card">
           <div class="kpi-stripe bg-purple-500"></div>
-          <p class="text-xs font-semibold text-slate-500 uppercase">Highest Package</p>
-          <h3 class="text-2xl font-black text-purple-600 mt-1" id="kpiHighestPackage">&#8377;16.50 LPA</h3>
-          <p class="text-[11px] text-slate-500 mt-1">Tier-1 Product Company</p>
+          <p class="text-[10px] sm:text-xs font-semibold text-slate-500 uppercase truncate">Highest CTC</p>
+          <h3 class="text-lg sm:text-2xl font-black text-purple-600 mt-0.5 sm:mt-1 truncate" id="kpiHighestPackage">&#8377;16.50 LPA</h3>
+          <p class="text-[9px] sm:text-[11px] text-slate-500 mt-0.5 truncate">Tier-1 Product</p>
         </div>
 
         <!-- KPI 6 -->
         <div class="kpi-card">
           <div class="kpi-stripe bg-teal-500"></div>
-          <p class="text-xs font-semibold text-slate-500 uppercase">Realized Revenue</p>
-          <h3 class="text-2xl font-black text-teal-600 mt-1" id="kpiRealizedRevenue">&#8377;4.85 Cr</h3>
-          <p class="text-[11px] text-teal-700 font-medium mt-1">94.2% Collection Rate</p>
+          <p class="text-[10px] sm:text-xs font-semibold text-slate-500 uppercase truncate">Revenue</p>
+          <h3 class="text-lg sm:text-2xl font-black text-teal-600 mt-0.5 sm:mt-1 truncate" id="kpiRealizedRevenue">&#8377;3.85 Cr</h3>
+          <p class="text-[9px] sm:text-[11px] text-teal-700 font-medium mt-0.5 truncate">Fee Collection</p>
         </div>
       </div>
     </section>
 
     <!-- INTERACTIVE CHARTS ROW -->
-    <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
       <!-- Chart 1: Domain-wise Revenue -->
-      <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-        <div class="flex items-center justify-between mb-4">
+      <div class="bg-white p-3.5 sm:p-5 rounded-xl border border-slate-200 shadow-sm">
+        <div class="flex items-center justify-between mb-3 sm:mb-4">
           <div>
-            <h3 class="font-bold text-slate-800 text-sm flex items-center gap-2">
-              <i class="fa-solid fa-chart-column text-indigo-600"></i> Course Track: Students Enrolled vs Revenue (&#8377; Lakhs)
+            <h3 class="font-bold text-slate-800 text-xs sm:text-sm flex items-center gap-1.5">
+              <i class="fa-solid fa-chart-column text-indigo-600"></i> Domain Enrollment vs Revenue
             </h3>
-            <p class="text-xs text-slate-500">Data Analytics & Full Stack Java lead gross tuition intake</p>
+            <p class="text-[10px] sm:text-xs text-slate-500">Data Analytics & Full Stack Java lead gross intake</p>
           </div>
-          <span class="badge badge-info"><i class="fa-solid fa-database"></i> Live API</span>
+          <span class="badge badge-info text-[10px] sm:text-xs"><i class="fa-solid fa-database"></i> Live API</span>
         </div>
-        <div class="h-64">
+        <div class="h-56 sm:h-64 relative">
           <canvas id="chartDomainRevenue"></canvas>
         </div>
       </div>
 
       <!-- Chart 2: Student Lifecycle Doughnut -->
-      <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-        <div class="flex items-center justify-between mb-4">
+      <div class="bg-white p-3.5 sm:p-5 rounded-xl border border-slate-200 shadow-sm">
+        <div class="flex items-center justify-between mb-3 sm:mb-4">
           <div>
-            <h3 class="font-bold text-slate-800 text-sm flex items-center gap-2">
-              <i class="fa-solid fa-chart-pie text-emerald-600"></i> Student Lifecycle Cohort Distribution
+            <h3 class="font-bold text-slate-800 text-xs sm:text-sm flex items-center gap-1.5">
+              <i class="fa-solid fa-chart-pie text-emerald-600"></i> Student Lifecycle Cohorts
             </h3>
-            <p class="text-xs text-slate-500">Current status classification across all 1,000 enrolled learners</p>
+            <p class="text-[10px] sm:text-xs text-slate-500">Status classification across 1,000 learners</p>
           </div>
-          <span class="badge badge-success">100% Accounted</span>
+          <span class="badge badge-success text-[10px] sm:text-xs">1,000 Students</span>
         </div>
-        <div class="h-64 flex justify-center">
+        <div class="h-56 sm:h-64 flex justify-center relative">
           <canvas id="chartStudentStatus"></canvas>
         </div>
       </div>
     </section>
 
-    <!-- WORKSPACE TABS INTERFACE -->
+    <!-- WORKSPACE TABS INTERFACE (Touch Scrollable on Phone) -->
     <section class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
-      <!-- Tab Headers -->
-      <div class="flex border-b border-slate-200 bg-slate-50 px-4">
+      <!-- Tab Headers with Touch Scroll for Phones -->
+      <div class="flex border-b border-slate-200 bg-slate-50 px-2 sm:px-4 touch-scroll whitespace-nowrap">
         <button onclick="switchAppTab('tab-sql')" id="tabBtn-sql" class="nav-tab-btn active">
-          <i class="fa-solid fa-terminal mr-1.5"></i> Live SQL Playground & Excel Exporter
+          <i class="fa-solid fa-terminal mr-1 sm:mr-1.5"></i>
+          <span>SQL Playground</span><span class="hidden sm:inline"> & Excel Exporter</span>
         </button>
         <button onclick="switchAppTab('tab-students')" id="tabBtn-students" class="nav-tab-btn">
-          <i class="fa-solid fa-users mr-1.5"></i> Student 360 & Early-Warning Risk Explorer
+          <i class="fa-solid fa-users mr-1 sm:mr-1.5"></i>
+          <span>Student 360</span><span class="hidden sm:inline"> & Risk Explorer</span>
         </button>
         <button onclick="switchAppTab('tab-portfolio')" id="tabBtn-portfolio" class="nav-tab-btn">
-          <i class="fa-solid fa-briefcase mr-1.5"></i> BA Interview Mastery & Architecture
+          <i class="fa-solid fa-briefcase mr-1 sm:mr-1.5"></i>
+          <span>Interview Guide</span><span class="hidden sm:inline"> & Architecture</span>
         </button>
       </div>
 
       <!-- TAB 1: LIVE SQL PLAYGROUND -->
-      <div id="content-tab-sql" class="p-6 space-y-4">
-        <div class="flex flex-wrap items-center justify-between gap-3">
+      <div id="content-tab-sql" class="p-3.5 sm:p-6 space-y-3 sm:space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
           <div>
-            <h4 class="font-bold text-slate-900 text-sm">Interactive SQL Analytics Engine</h4>
-            <p class="text-xs text-slate-500">Select any of the 21 business analyst queries or write custom SQL against SQLite/MySQL.</p>
+            <h4 class="font-bold text-slate-900 text-xs sm:text-sm">Interactive SQL Analytics Engine</h4>
+            <p class="text-[10px] sm:text-xs text-slate-500">Select any of the 21 BA queries or write custom SQL.</p>
           </div>
-          <div class="flex items-center gap-2">
-            <label class="text-xs font-semibold text-slate-600">Preset Query:</label>
-            <select id="presetQuerySelect" onchange="loadPresetQuery()" class="bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs focus:ring-2 focus:ring-indigo-500 outline-none">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-2">
+            <label class="text-[11px] sm:text-xs font-semibold text-slate-600">Preset Query:</label>
+            <select id="presetQuerySelect" onchange="loadPresetQuery()" class="bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs focus:ring-2 focus:ring-indigo-500 outline-none w-full sm:w-auto">
               <option value="1">Query 1: Executive KPI Summary</option>
               <option value="2">Query 2: Domain-wise Enrollment & Revenue</option>
               <option value="3">Query 3: Course Completion & Dropout Benchmark</option>
-              <option value="4" selected>Query 4: Attendance Tier vs Placement CTC Correlation</option>
+              <option value="4" selected>Query 4: Attendance Tier vs Placement CTC</option>
               <option value="5">Query 5: Early Warning At-Risk Dropout Detection</option>
               <option value="7">Query 7: Trainer Effectiveness Scorecard</option>
               <option value="12">Query 12: Top Recruiting Partners by Hires & CTC</option>
@@ -197,29 +203,30 @@
 
         <!-- SQL Editor Box -->
         <div>
-          <textarea id="sqlInput" rows="5" class="sql-editor" placeholder="Write or edit SELECT SQL query here..."></textarea>
+          <textarea id="sqlInput" rows="4" class="sql-editor" placeholder="Write or edit SELECT SQL query here..."></textarea>
         </div>
 
-        <div class="flex flex-wrap items-center justify-between gap-3">
-          <div class="flex items-center gap-3">
-            <button onclick="runCustomSql()" id="btnRunSql" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-4 py-2 rounded-lg text-xs flex items-center gap-2 transition shadow-sm">
+        <!-- Action Buttons (Full width on mobile, inline on desktop) -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
+            <button onclick="runCustomSql()" id="btnRunSql" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-4 py-2 rounded-lg text-xs flex items-center justify-center gap-2 transition shadow-sm w-full sm:w-auto">
               <i class="fa-solid fa-play"></i> Execute Query
             </button>
-            <button onclick="exportCurrentSqlExcel()" id="btnExportExcel" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-4 py-2 rounded-lg text-xs flex items-center gap-2 transition shadow-sm">
-              <i class="fa-solid fa-file-excel"></i> Export Result to Excel (.xlsx)
+            <button onclick="exportCurrentSqlExcel()" id="btnExportExcel" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-4 py-2 rounded-lg text-xs flex items-center justify-center gap-2 transition shadow-sm w-full sm:w-auto">
+              <i class="fa-solid fa-file-excel"></i> Export Result (.xlsx)
             </button>
           </div>
-          <div id="queryMetaBadge" class="text-xs text-slate-500 font-mono">
+          <div id="queryMetaBadge" class="text-[11px] sm:text-xs text-slate-500 font-mono text-center sm:text-right">
             Ready to execute
           </div>
         </div>
 
-        <!-- SQL Result Table View -->
+        <!-- SQL Result Table View (Horizontal Touch Scroll for Mobile) -->
         <div class="border border-slate-200 rounded-lg overflow-hidden bg-white">
-          <div class="max-h-96 overflow-auto" id="sqlResultContainer">
+          <div class="touch-scroll max-h-80 sm:max-h-96" id="sqlResultContainer">
             <table class="w-full text-xs text-left" id="sqlTable">
               <thead class="bg-slate-100 text-slate-700 uppercase font-bold sticky top-0" id="sqlTableHeader">
-                <tr><th class="p-3">Run a query to view live relational results</th></tr>
+                <tr><th class="p-2.5 sm:p-3">Run a query to view live relational results</th></tr>
               </thead>
               <tbody class="divide-y divide-slate-200" id="sqlTableBody">
                 <tr><td class="p-4 text-center text-slate-400">Click "Execute Query" above</td></tr>
@@ -230,15 +237,15 @@
       </div>
 
       <!-- TAB 2: STUDENT 360 & EARLY-WARNING RISK EXPLORER -->
-      <div id="content-tab-students" class="p-6 space-y-4 hidden">
-        <div class="flex flex-wrap items-center justify-between gap-4">
+      <div id="content-tab-students" class="p-3.5 sm:p-6 space-y-3 sm:space-y-4 hidden">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
           <div>
-            <h4 class="font-bold text-slate-900 text-sm">Student 360 Master Explorer & Early Warning Alert Queue</h4>
-            <p class="text-xs text-slate-500">Live directory of 1,000 enrolled learners with academic, attendance, and placement attributes.</p>
+            <h4 class="font-bold text-slate-900 text-xs sm:text-sm">Student 360 Explorer & Early-Warning Queue</h4>
+            <p class="text-[10px] sm:text-xs text-slate-500">Live directory of 1,000 enrolled learners with academic flags.</p>
           </div>
-          <div class="flex items-center gap-3 text-xs">
-            <input type="text" id="studentSearchInput" onkeyup="filterStudentDirectory()" placeholder="Search by name, ID, course..." class="bg-white border border-slate-300 rounded-lg px-3 py-1.5 focus:ring-2 focus:ring-indigo-500 outline-none w-56">
-            <select id="studentStatusFilter" onchange="filterStudentDirectory()" class="bg-white border border-slate-300 rounded-lg px-3 py-1.5 focus:ring-2 focus:ring-indigo-500 outline-none">
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 text-xs">
+            <input type="text" id="studentSearchInput" onkeyup="filterStudentDirectory()" placeholder="Search name, ID, course..." class="bg-white border border-slate-300 rounded-lg px-3 py-1.5 focus:ring-2 focus:ring-indigo-500 outline-none w-full sm:w-52">
+            <select id="studentStatusFilter" onchange="filterStudentDirectory()" class="bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 focus:ring-2 focus:ring-indigo-500 outline-none w-full sm:w-auto">
               <option value="All">All Statuses (1,000)</option>
               <option value="At-Risk">⚠️ At-Risk Only (Counselor Alert)</option>
               <option value="Placed">🎉 Placed Students</option>
@@ -249,19 +256,19 @@
           </div>
         </div>
 
-        <div class="border border-slate-200 rounded-lg overflow-x-auto max-h-[500px]">
-          <table class="w-full text-xs text-left">
+        <div class="border border-slate-200 rounded-lg touch-scroll max-h-[460px]">
+          <table class="w-full text-xs text-left min-w-[700px]">
             <thead class="bg-slate-100 text-slate-700 uppercase font-semibold sticky top-0">
               <tr>
-                <th class="p-3">Student ID</th>
-                <th class="p-3">Student Name</th>
-                <th class="p-3">Course Track</th>
-                <th class="p-3">City</th>
-                <th class="p-3 text-center">Attendance %</th>
-                <th class="p-3 text-center">Avg Score %</th>
-                <th class="p-3">Lifecycle Status</th>
-                <th class="p-3">Placed Company & CTC</th>
-                <th class="p-3 text-center">Intervention</th>
+                <th class="p-2.5 sm:p-3">Student ID</th>
+                <th class="p-2.5 sm:p-3">Student Name</th>
+                <th class="p-2.5 sm:p-3">Course Track</th>
+                <th class="p-2.5 sm:p-3">City</th>
+                <th class="p-2.5 sm:p-3 text-center">Attendance %</th>
+                <th class="p-2.5 sm:p-3 text-center">Avg Score %</th>
+                <th class="p-2.5 sm:p-3">Status</th>
+                <th class="p-2.5 sm:p-3">Company & CTC</th>
+                <th class="p-2.5 sm:p-3 text-center">Intervention</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-slate-200" id="studentTableBody">
@@ -272,13 +279,13 @@
       </div>
 
       <!-- TAB 3: BUSINESS ANALYST INTERVIEW MASTERY & ARCHITECTURE -->
-      <div id="content-tab-portfolio" class="p-6 space-y-6 hidden">
-        <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-5">
-          <div class="flex items-center justify-between mb-2">
-            <h4 class="font-bold text-indigo-950 text-base flex items-center gap-2">
-              <i class="fa-solid fa-microphone-lines text-indigo-600"></i> 60-Second Interview Elevator Pitch (Project Introduction)
+      <div id="content-tab-portfolio" class="p-3.5 sm:p-6 space-y-4 sm:space-y-6 hidden">
+        <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-3.5 sm:p-5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+            <h4 class="font-bold text-indigo-950 text-sm sm:text-base flex items-center gap-1.5">
+              <i class="fa-solid fa-microphone-lines text-indigo-600"></i> 60-Second Interview Elevator Pitch
             </h4>
-            <button onclick="copyElevatorPitch()" class="text-xs bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-3 py-1 rounded transition">
+            <button onclick="copyElevatorPitch()" class="text-xs bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-3 py-1.5 rounded transition flex items-center justify-center gap-1.5 w-full sm:w-auto">
               <i class="fa-regular fa-copy"></i> Copy Pitch
             </button>
           </div>
@@ -287,52 +294,49 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="border border-slate-200 rounded-xl p-4 bg-white">
-            <h5 class="font-bold text-slate-900 text-sm mb-2 flex items-center gap-2 text-indigo-600">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-6">
+          <div class="border border-slate-200 rounded-xl p-3.5 sm:p-4 bg-white">
+            <h5 class="font-bold text-slate-900 text-xs sm:text-sm mb-1.5 flex items-center gap-1.5 text-indigo-600">
               <i class="fa-solid fa-sitemap"></i> Relational Database (3NF)
             </h5>
-            <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside">
+            <ul class="text-[11px] sm:text-xs text-slate-600 space-y-1 list-disc list-inside">
               <li><strong>7 Tables:</strong> courses, trainers, batches, students, attendance, assessments, placements</li>
-              <li>Enforces foreign key cascading and check constraints</li>
-              <li>21 Production Business Analyst SQL queries</li>
-              <li>Analytical Views & Stored Procedures</li>
+              <li>Foreign key cascading and check constraints</li>
+              <li>21 Production BA SQL queries with Window Functions</li>
             </ul>
           </div>
 
-          <div class="border border-slate-200 rounded-xl p-4 bg-white">
-            <h5 class="font-bold text-slate-900 text-sm mb-2 flex items-center gap-2 text-emerald-600">
+          <div class="border border-slate-200 rounded-xl p-3.5 sm:p-4 bg-white">
+            <h5 class="font-bold text-slate-900 text-xs sm:text-sm mb-1.5 flex items-center gap-1.5 text-emerald-600">
               <i class="fa-solid fa-file-excel"></i> Excel Financial Model
             </h5>
-            <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside">
+            <ul class="text-[11px] sm:text-xs text-slate-600 space-y-1 list-disc list-inside">
               <li>Structured 4-tab workbook (`.xlsx`)</li>
-              <li>Advanced Formulas: `XLOOKUP`, `IFS`, `SUMIFS`, `AVERAGEIFS`</li>
-              <li>Dynamic arrays (`FILTER`, `SORT`)</li>
-              <li>Pivot Tables & Conditional Formatting color scales</li>
+              <li>Formulas: `XLOOKUP`, `IFS`, `SUMIFS`, `AVERAGEIFS`</li>
+              <li>Dynamic arrays (`FILTER`, `SORT`) & Pivot tables</li>
             </ul>
           </div>
 
-          <div class="border border-slate-200 rounded-xl p-4 bg-white">
-            <h5 class="font-bold text-slate-900 text-sm mb-2 flex items-center gap-2 text-amber-600">
+          <div class="border border-slate-200 rounded-xl p-3.5 sm:p-4 bg-white">
+            <h5 class="font-bold text-slate-900 text-xs sm:text-sm mb-1.5 flex items-center gap-1.5 text-amber-600">
               <i class="fa-solid fa-chart-pie"></i> Power BI Star Schema
             </h5>
-            <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside">
-              <li>Kimball Star Schema with 1-to-many single filters</li>
-              <li>30+ Production DAX Measures (Time Intelligence, Employability Index)</li>
-              <li>3-Page Executive wireframe specification</li>
-              <li>Interactive browser preview simulator</li>
+            <ul class="text-[11px] sm:text-xs text-slate-600 space-y-1 list-disc list-inside">
+              <li>Kimball Star Schema with 1-to-many filters</li>
+              <li>30+ Production DAX Measures (Employability Index)</li>
+              <li>Standalone interactive browser preview simulator</li>
             </ul>
           </div>
         </div>
 
         <!-- Documentation Links -->
-        <div class="bg-slate-100 p-4 rounded-xl flex flex-wrap items-center justify-between text-xs text-slate-700">
+        <div class="bg-slate-100 p-3 sm:p-4 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[11px] sm:text-xs text-slate-700">
           <span class="font-bold">Project Documentation References:</span>
-          <div class="flex flex-wrap gap-4 font-medium">
-            <span class="text-indigo-600"><i class="fa-solid fa-file-lines"></i> docs/BRD_Business_Requirements_Document.md</span>
-            <span class="text-emerald-600"><i class="fa-solid fa-lightbulb"></i> docs/Insights_and_Recommendations.md</span>
-            <span class="text-purple-600"><i class="fa-solid fa-comments"></i> docs/BA_Interview_Questions_and_Answers.md</span>
-            <span class="text-amber-600"><i class="fa-solid fa-cloud"></i> docs/Cloud_Deployment_Guide.md</span>
+          <div class="flex flex-wrap gap-2.5 sm:gap-4 font-medium">
+            <span class="text-indigo-600"><i class="fa-solid fa-file-lines"></i> docs/BRD.md</span>
+            <span class="text-emerald-600"><i class="fa-solid fa-lightbulb"></i> docs/Insights.md</span>
+            <span class="text-purple-600"><i class="fa-solid fa-comments"></i> docs/BA_Interview_QnA.md</span>
+            <span class="text-amber-600"><i class="fa-solid fa-cloud"></i> docs/Cloud_Guide.md</span>
           </div>
         </div>
       </div>
@@ -340,19 +344,19 @@
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-slate-900 text-slate-400 text-xs py-4 px-6 border-t border-slate-800 text-center">
-    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+  <!-- FOOTER (Responsive Stack on Phone) -->
+  <footer class="bg-slate-900 text-slate-400 text-xs py-4 px-3 sm:px-6 border-t border-slate-800 text-center sm:text-left">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2.5">
       <div>
         <p class="font-medium text-slate-300">Student Performance Analytics | Business Analyst Portfolio</p>
-        <p class="text-[11px] text-slate-500 mt-0.5">Author & Creator: <strong class="text-amber-400">Uncodemy Student</strong> &copy; 2024</p>
+        <p class="text-[10px] sm:text-[11px] text-slate-500 mt-0.5">Author & Creator: <strong class="text-amber-400">Uncodemy Student</strong> &copy; 2024</p>
       </div>
-      <div class="flex items-center gap-4 text-slate-400">
+      <div class="flex items-center gap-3 text-[11px] sm:text-xs text-slate-400 flex-wrap justify-center">
         <a href="../power_bi/interactive_bi_preview.html" target="_blank" class="hover:text-white transition">Power BI Preview</a>
         <span>&bull;</span>
         <a href="/api/download-excel" class="hover:text-white transition">Download Excel</a>
         <span>&bull;</span>
-        <span class="text-emerald-400 font-mono">Status: Connected Live</span>
+        <span class="text-emerald-400 font-mono">Status: Connected</span>
       </div>
     </div>
   </footer>
