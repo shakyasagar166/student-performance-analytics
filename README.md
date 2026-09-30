@@ -154,6 +154,24 @@ To publish this portfolio project directly to your GitHub profile:
 
 ---
 
+## 🌐 Deploy to the Cloud (Free 24/7 Live Public Website)
+
+You can host this entire full-stack project online for free so that recruiters, interviewers, and anyone on the internet can search and use it:
+
+1. **Push to GitHub** using `push_to_github.bat`.
+2. Go to **[Render.com](https://render.com)** (Free, no credit card needed).
+3. Click **"New +" -> "Web Service"** and connect your GitHub repository.
+4. Settings:
+   - **Build Command:** `pip install -r requirements.txt`
+   - **Start Command:** `python server.py`
+   - **Plan:** Free
+5. Click **"Deploy Web Service"** — within 2 minutes, you will get a permanent live public URL like:
+   👉 **`https://student-performance-analytics.onrender.com`**
+
+*(Detailed instructions for Render, Railway, and PythonAnywhere are in [`docs/Cloud_Deployment_Guide.md`](docs/Cloud_Deployment_Guide.md))*.
+
+---
+
 ## 🎤 Interview Cheatsheet: The 60-Second Elevator Pitch
 
 > *"Hello, I am a Business Analyst from **Uncodemy**. I designed and deployed an end-to-end **Student Performance & Placement Analytics System** for an EdTech academy enrolling 1,000 students across 6 domains. The institute faced a 14.2% mid-cohort dropout bottleneck and stagnant 68% placement conversions.  
