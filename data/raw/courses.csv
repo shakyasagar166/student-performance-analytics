@@ -1,0 +1,7 @@
+course_id,course_name,category,duration_weeks,course_fee,min_passing_score
+CRS-101,Data Analytics Masterclass,Data & AI,16,38000,65
+CRS-102,Full Stack Java Development,Software Engineering,20,45000,70
+CRS-103,Data Science & Machine Learning,Data & AI,24,52000,70
+CRS-104,Full Stack Python & Django,Software Engineering,18,42000,65
+CRS-105,Business Intelligence & Power BI,Business Analytics,12,28000,60
+CRS-106,Digital Marketing & Growth,Digital Marketing,12,25000,60

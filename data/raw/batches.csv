@@ -1,0 +1,11 @@
+batch_id,batch_name,course_id,trainer_id,batch_type,start_date,end_date,batch_capacity
+BTC-2024-001,Data Analytics (Weekend),CRS-101,TRN-001,Weekend Batch (Sat-Sun),2024-01-06,2024-04-28,35
+BTC-2024-002,Full Stack Java (Weekday),CRS-102,TRN-002,Weekday Morning (Mon-Thu),2024-01-15,2024-06-03,35
+BTC-2024-003,Data Science (Weekend),CRS-103,TRN-003,Weekend Batch (Sat-Sun),2024-01-20,2024-07-06,35
+BTC-2024-004,Python Django (Weekday),CRS-104,TRN-010,Weekday Evening (Mon-Thu),2024-02-05,2024-06-10,35
+BTC-2024-005,Power BI (Weekend),CRS-105,TRN-004,Weekend Batch (Sat-Sun),2024-02-17,2024-05-11,35
+BTC-2024-006,Digital Mktg (Weekday),CRS-106,TRN-008,Weekday Morning (Mon-Thu),2024-03-04,2024-05-27,35
+BTC-2024-007,Data Analytics (Weekday),CRS-101,TRN-016,Weekday Morning (Mon-Thu),2024-03-18,2024-07-08,35
+BTC-2024-008,Full Stack Java (Weekend),CRS-102,TRN-011,Weekend Batch (Sat-Sun),2024-04-06,2024-08-24,35
+BTC-2024-009,Data Science (Weekday),CRS-103,TRN-006,Weekday Evening (Mon-Thu),2024-04-22,2024-10-07,35
+BTC-2024-010,Business BI (Weekend),CRS-105,TRN-009,Weekend Batch (Sat-Sun),2024-05-04,2024-07-27,35

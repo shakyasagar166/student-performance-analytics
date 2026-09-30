@@ -1,0 +1,21 @@
+trainer_id,trainer_name,specialization,experience_years,trainer_rating,city
+TRN-001,Vikram Malhotra,Data Analytics & SQL,11,4.9,Noida
+TRN-002,Neha Sharma,Java & Spring Boot,8,4.7,Delhi NCR
+TRN-003,Rahul Verma,Python & Machine Learning,10,4.8,Bengaluru
+TRN-004,Pooja Iyer,Power BI & Tableau,7,4.6,Noida
+TRN-005,Arjun Kapoor,Full Stack Web Dev,9,4.7,Hyderabad
+TRN-006,Sneha Reddy,Data Science & AI,12,4.9,Bengaluru
+TRN-007,Rohan Gupta,SQL & Database Design,6,4.5,Noida
+TRN-008,Ananya Deshmukh,Digital Marketing Strategy,8,4.6,Delhi NCR
+TRN-009,Karan Mehta,Business Intelligence,10,4.8,Pune
+TRN-010,Tanvi Joshi,Python & Cloud Apps,7,4.6,Noida
+TRN-011,Amitabh Nair,Java Microservices,13,4.9,Bengaluru
+TRN-012,Divya Bhat,Machine Learning Labs,6,4.5,Hyderabad
+TRN-013,Siddharth Das,Data Warehousing & ETL,9,4.7,Noida
+TRN-014,Kavya Menon,Agile Project Management,11,4.8,Delhi NCR
+TRN-015,Gaurav Pandey,Full Stack Frontend,7,4.6,Pune
+TRN-016,Swati Saxena,Data Analytics & Excel,8,4.7,Noida
+TRN-017,Rishi Trivedi,Web Analytics & SEO,5,4.4,Delhi NCR
+TRN-018,Meera Chauhan,Statistics & Predictive Modeling,10,4.8,Bengaluru
+TRN-019,Naveen Agrawal,Backend Systems & API,9,4.7,Noida
+TRN-020,Isha Shukla,Big Data Fundamentals,8,4.6,Hyderabad
